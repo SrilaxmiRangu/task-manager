@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: 'https://task-manager-backend-fx8y.onrender.com' });
+const api = axios.create({ baseURL: 'https://task-manager-backend-fx8y.onrender.com/api' });
 
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
