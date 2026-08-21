@@ -1,0 +1,12 @@
+const express = require('express');
+const router = express.Router();
+const auth = require('../middleware/authMiddleware');
+const { createTask, getTasks, updateTask, deleteTask, markComplete, getAnalytics } = require('../controllers/taskController');
+router.use(auth);
+router.post('/', createTask);
+router.get('/', getTasks);
+router.get('/analytics', getAnalytics);
+router.put('/:id', updateTask);
+router.delete('/:id', deleteTask);
+router.patch('/:id/complete', markComplete);
+module.exports = router;
